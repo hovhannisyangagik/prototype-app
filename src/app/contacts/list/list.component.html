@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contacts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contact of contactsFound">
+          <ion-avatar item-start>
+            <img *ngIf="contact?.image" [src]="contact.image" />
+          </ion-avatar>
+          <div class="n-p">
+            <h5>{{contact.name}}</h5>
+            <div >
+              <p *ngFor="let num of contact?.numbers">{{num.value}}</p>
+            </div>
+          </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

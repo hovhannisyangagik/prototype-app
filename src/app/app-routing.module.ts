@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ContactsComponent } from './contacts/contacts/contacts.component';
+import { ListComponent } from './contacts/list/list.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    component:ContactsComponent
+  },
+  {
+      path:'list',
+      component:ListComponent
   }
 ];
 @NgModule({
