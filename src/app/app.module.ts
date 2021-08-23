@@ -4,6 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { Contacts } from '@ionic-native/contacts';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -16,17 +17,22 @@ import { ListComponent } from './contacts/list/list.component';
   declarations: [
     AppComponent,
     ContactsComponent,
-    ListComponent
+    ListComponent,
+    
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Contacts,
-    BackgroundMode, WebView
+    BackgroundMode,
+     WebView, 
+     SplashScreen
   ],
   bootstrap: [AppComponent],
 })
